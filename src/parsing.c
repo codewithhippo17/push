@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 19:46:00 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/19 02:46:06 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/19 22:43:13 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ bool	ft__atoi(t_stack **a, const char *nptr)
 		res = res * 10 + nptr[i] - 48;
 		if (res > 2147483647 && sign == 1)
 			return (false);
-		else if (res > 2147483648 && sign == -1)
+		else if (res > 2147483648 && sign == (unsigned int)-1)
 			return (false);
 		i++;
 	}
@@ -74,10 +74,8 @@ bool	ft__atoi(t_stack **a, const char *nptr)
 
 bool	ft_atoi_2d(t_stack **a, char **input)
 {
-	long	value;
 	int		i;
 
-	value = 0;
 	i = 0;
 	while (input[i])
 	{
@@ -121,27 +119,3 @@ bool	ft_parsing(t_stack **a, int ac, char **input)
 	}
 	return (true);
 }
-
-// int main(int ac, char *argv[])
-// {
-// 	t_stack *a = NULL;
-// 	t_stack *current;
-// 	if (ac > 2)
-// 	{
-// 		int ret = ft_parsing(&a, ac, argv);
-// 		current = a;
-// 		int i = 0;
-// 		if (ret == false)
-// 		{
-// 			printf("Error\n");
-// 			return (1);
-// 		}
-// 		while (current)
-// 		{
-// 			printf("integer[%d]%d\n", i, current->value);
-// 			current = current->next;
-// 		}
-// 		ft_clean(&a);
-// 	}
-// 	return (0);
-// }

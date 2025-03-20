@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 02:46:32 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/19 03:58:02 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/20 01:08:18 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,32 @@ t_stack	*ft_last(t_stack *a)
 	if (!a)
 		return (NULL);
 	current = a;
-	while (current->next != NULL)
+	while (current->next)
 		current = current->next;
 	return (current);
+}
+
+int	ft_stacksize(t_stack *stack_a)
+{
+	t_stack	*current;
+	int		i;
+
+	current = stack_a;
+	i = 0;
+	while (current)
+	{
+		current = current->next;
+		i++;
+	}
+	return (i);
+}
+
+void	ft_lstaddfront(t_stack **stack, t_stack *new)
+{
+	if (!stack || !new)
+		return ;
+	new->next = *stack;
+	*stack = new;
 }
 
 void	ft_add_back(t_stack **a, int value)
@@ -48,19 +71,4 @@ void	ft_add_back(t_stack **a, int value)
 	}
 	current = ft_last(*a);
 	current->next = new;
-}
-
-int	ft_stacksize(t_stack *stack_a)
-{
-	t_stack	*current;
-	int		i;
-
-	current = stack_a;
-	i = 0;
-	while (current != NULL)
-	{
-		current = current->next;
-		i++;
-	}
-	return (i);
 }
