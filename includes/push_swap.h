@@ -6,6 +6,7 @@
 # include <stdbool.h>
 # include <stdio.h>
 # include <limits.h>
+# include <unistd.h>
 
 // typedef size_t t_size;
 
@@ -19,8 +20,14 @@ typedef struct stack
 
 ////	sorting functions		\\\\.
 
-void	ft_sort(t_stack **a, t_stack **b);
+void		ft_sort(t_stack **a, t_stack **b, int size);
+void		push_to_b(t_stack **a, t_stack **b, int size);
+int	    	find_max(t_stack **b, int max_pos);
+void		do_inst(t_stack **a, t_stack **b, int max_idx, int b_size);
+void		push_to_a(t_stack **a, t_stack **b);
+int			find_min(t_stack **b, int min_pos);
 
+void 		print_stack(t_stack **b);
 
 ////	parssing functions		\\\\.
 

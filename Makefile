@@ -4,6 +4,7 @@ SRCS =	push_swap.c\
 		src/ft_check.c\
 		src/ft_op_r.c\
 		src/ft_op_sp.c\
+		src/sort_helpers.c\
 		src/utils.c
 	
 OBJS = $(SRCS:.c=.o)

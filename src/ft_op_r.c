@@ -6,17 +6,17 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 02:40:29 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/20 02:41:46 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/21 02:56:31 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void    ra(t_stack **a)
+void	ra(t_stack **a)
 {
-	t_stack *first;
-	t_stack *last;
-	
+	t_stack	*first;
+	t_stack	*last;
+
 	if (!(*a) || ft_stacksize(*a) < 3)
 		return ;
 	first = (*a)->next;
@@ -24,30 +24,30 @@ void    ra(t_stack **a)
 	last->next = *a;
 	(*a)->next = NULL;
 	(*a) = first;
-	printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
-void    rb(t_stack **b)
+void	rb(t_stack **b)
 {
-	t_stack *first;
-	t_stack *last;
-	
-	if (!(*b) || ft_stacksize(*b) < 3)
+	t_stack	*first;
+	t_stack	*last;
+
+	if (!(*b) || ft_stacksize(*b) < 2)
 		return ;
 	first = (*b)->next;
 	last = ft_last(*b);
 	last->next = *b;
 	(*b)->next = NULL;
 	(*b) = first;
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
-void    rra(t_stack **a)
+void	rra(t_stack **a)
 {
-	t_stack *first;
-	t_stack *last;
-	
-	if (!(*a) || ft_stacksize(*a) < 3)
+	t_stack	*first;
+	t_stack	*last;
+
+	if (!(*a) || ft_stacksize(*a) < 2)
 		return ;
 	first = ft_last(*a);
 	last = *a;
@@ -58,14 +58,14 @@ void    rra(t_stack **a)
 	first->next = *a;
 	*a = first;
 	last->next = NULL;
-	printf("rra\n");
+	write(1, "rra\n", 4);
 }
 
-void    rrb(t_stack **b)
+void	rrb(t_stack **b)
 {
-	t_stack *first;
-	t_stack *last;
-	
+	t_stack	*first;
+	t_stack	*last;
+
 	if (!(*b) || ft_stacksize(*b) < 3)
 		return ;
 	first = ft_last(*b);
@@ -77,5 +77,5 @@ void    rrb(t_stack **b)
 	first->next = *b;
 	*b = first;
 	last->next = NULL;
-	printf("rrb\n");
+	write(1, "rrb\n", 4);
 }
