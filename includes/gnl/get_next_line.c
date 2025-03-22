@@ -6,13 +6,13 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 12:20:02 by ehamza            #+#    #+#             */
-/*   Updated: 2024/12/08 14:16:17 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 10:06:03 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_last(char	*line)
+char	*ft__last(char	*line)
 {
 	int		i;
 
@@ -38,7 +38,7 @@ void	ft_save(char **reminder, char *buffer)
 		return ;
 	if (buffer)
 	{
-		len = ft_strlen(buffer);
+		len = ft__strlen(buffer);
 		*reminder = malloc(len + 1);
 		if (*reminder)
 		{
@@ -65,13 +65,13 @@ void	fill_word(int fd, char **word, char **line, char **newline_pos)
 		size = read(fd, *word, BUFFER_SIZE);
 		if (size <= 0)
 		{
-			*newline_pos = ft_memchr(*line);
+			*newline_pos = ft__memchr(*line);
 			free(*word);
 			break ;
 		}
 		(*word)[size] = 0;
-		*line = ft_strjoin(*line, *word);
-		*newline_pos = ft_memchr(*line);
+		*line = ft__strjoin(*line, *word);
+		*newline_pos = ft__memchr(*line);
 		if (*newline_pos)
 			break ;
 	}
@@ -88,11 +88,11 @@ char	*read_buffer(int fd)
 	newline_pos = NULL;
 	if (reminder)
 	{
-		line = ft_strjoin(line, reminder);
+		line = ft__strjoin(line, reminder);
 		reminder = NULL;
 	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
+		return (free(reminder), free(line), NULL);
 	fill_word(fd, &word, &line, &newline_pos);
 	if (!word)
 		return (NULL);
@@ -105,9 +105,7 @@ char	*get_next_line(int fd)
 {
 	char	*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
-	line = ft_last(read_buffer(fd));
+	line = ft__last(read_buffer(fd));
 	if (!line || line[0] == 0)
 	{
 		free(line);
@@ -116,30 +114,33 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-// int main()
-// {
-// 	int fd = open("bbb", O_RDWR, 0777);
-// 	char *line = NULL;
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	free(line);
+/*
+int main()
+{
+	int fd = 0; 
+	// = open("bbb", O_RDWR, 0777);
+	char *line = NULL;
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
 
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
 
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
 
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
 
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// 	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
 
-// 	line = get_next_line(fd);
-// 	printf("%s", line);
-// }
+	line = get_next_line(fd);
+	printf("%s", line);
+}
+*/

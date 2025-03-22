@@ -6,13 +6,13 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 10:00:28 by ehamza            #+#    #+#             */
-/*   Updated: 2024/12/08 14:17:50 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 07:43:38 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft__strlen(const char *str)
 {
 	size_t	i;
 
@@ -22,13 +22,13 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(char *s)
+char	*ft__strdup(char *s)
 {
 	char	*dup;
 	int		i;
 
 	i = 0;
-	dup = malloc(ft_strlen(s) + 1);
+	dup = malloc(ft__strlen(s) + 1);
 	if (!dup)
 		return (0);
 	while (s[i])
@@ -40,7 +40,7 @@ char	*ft_strdup(char *s)
 	return (dup);
 }
 
-char	*ft_memchr(char *str)
+char	*ft__memchr(char *str)
 {
 	size_t	i;
 
@@ -56,7 +56,7 @@ char	*ft_memchr(char *str)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft__strjoin(char *s1, char *s2)
 {
 	char	*join;
 	int		i;
@@ -65,10 +65,10 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = 0;
 	i = 0;
 	if (s1 == NULL)
-		s1 = ft_strdup("");
+		s1 = ft__strdup("");
 	if (s2 == NULL)
-		s2 = ft_strdup("");
-	join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+		s2 = ft__strdup("");
+	join = malloc(ft__strlen(s1) + ft__strlen(s2) + 1);
 	if (!join)
 		return (NULL);
 	while (s1[j])

@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 19:46:00 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/19 22:43:13 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 06:29:03 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ bool	ft__atoi(t_stack **a, const char *nptr)
 			return (false);
 		i++;
 	}
-	ft_add_back(a, (res * sign));
-	return (true);
+	return (ft_add_back(a, (res * sign)));
 }
 
 bool	ft_atoi_2d(t_stack **a, char **input)

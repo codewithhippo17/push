@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 02:47:24 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/22 00:24:20 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 07:31:16 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ void	do_inst(t_stack **a, t_stack **b, int max_idx, int b_size)
 	if (max_idx <= b_size / 2)
 	{
 		while ((*b)->pos != b_size - 1)
-			rb(b);
+			rb(b, 1);
 	}
 	else
 	{
 		while ((*b)->pos != b_size - 1)
-			rrb(b);
+			rrb(b, 1);
 	}
-	pa(a, b);
+	pa(a, b, 1);
 }
 
 void	push_to_a(t_stack **a, t_stack **b)
@@ -85,17 +85,17 @@ void	push_to_b(t_stack **a, t_stack **b, int size)
 	{
 		if ((*a)->pos < i)
 		{
-			pb(a, b);
+			pb(a, b, 1);
 			i++;
 		}
 		else if ((*a)->pos < i + ch)
 		{
-			pb(a, b);
-			rb(b);
+			pb(a, b, 1);
+			rb(b, 1);
 			i++;
 		}
 		else
-			ra(a);
+			ra(a, 1);
 	}
 }
 

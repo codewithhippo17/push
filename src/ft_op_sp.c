@@ -6,13 +6,13 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 00:52:15 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/21 02:56:40 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 07:33:21 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, int w)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -26,10 +26,11 @@ void	sa(t_stack **a)
 	first->next = second->next;
 	second->next = first;
 	*a = second;
-	write(1, "sa\n", 3);
+	if (w == 1)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, int w)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -41,10 +42,11 @@ void	sb(t_stack **b)
 	first->next = second->next;
 	second->next = first;
 	*b = second;
-	write(1, "sb\n", 3);
+	if (w == 1)
+		write(1, "sb\n", 3);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, int w)
 {
 	t_stack	*new;
 
@@ -52,10 +54,11 @@ void	pb(t_stack **a, t_stack **b)
 	*a = (*a)->next;
 	new->next = NULL;
 	ft_lstaddfront(b, new);
-	write(1, "pb\n", 3);
+	if (w == 1)
+		write(1, "pb\n", 3);
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, int w)
 {
 	t_stack	*new;
 
@@ -63,5 +66,6 @@ void	pa(t_stack **a, t_stack **b)
 	*b = (*b)->next;
 	new->next = NULL;
 	ft_lstaddfront(a, new);
-	write(1, "pa\n", 3);
+	if (w == 1)
+		write(1, "pa\n", 3);
 }

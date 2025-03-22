@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 03:38:56 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/22 00:24:41 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 08:10:19 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ void	push_b(t_stack **a, t_stack **b, int min_idx, int a_size)
 	if (min_idx <= a_size / 2)
 	{
 		while ((*a)->pos != min_pos)
-			ra(a);
+			ra(a, 1);
 	}
 	else
 	{
 		while ((*a)->pos != min_pos)
-			rra(a);
+			rra(a, 1);
 	}
 	min_pos++;
-	pb(a, b);
+	pb(a, b, 1);
 }
 
 void	ft_sort_five(t_stack **a, t_stack **b, int a_size)
@@ -45,22 +45,22 @@ void	ft_sort_five(t_stack **a, t_stack **b, int a_size)
 	}
 	if ((*a)->pos > (*a)->next->pos)
 	{
-		sa(a);
+		sa(a, 1);
 	}
 	while ((*a)->pos != 0)
 	{
-		pa(a, b);
+		pa(a, b, 1);
 	}
 }
 
 void	ft_sort_three(t_stack **a, int max_idx)
 {
 	if (max_idx == 0)
-		ra(a);
+		ra(a, 1);
 	if (max_idx == 1)
-		rra(a);
+		rra(a, 1);
 	if ((*a)->pos != 0)
-		sa(a);
+		sa(a, 1);
 }
 
 void	ft_sort(t_stack **a, t_stack **b, int size)
@@ -103,7 +103,7 @@ int	main(int ac, char *argv[])
 		write(2, "Error\n", 6);
 		return (ft_clean(&a), 0);
 	}
-	if (is_sorted(&a, size) == false)
+	if (is_sorted(&a, size) == true)
 		return (ft_clean(&a), 0);
 	ft_sort(&a, &b, size);
 	ft_clean(&a);

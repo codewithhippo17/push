@@ -6,13 +6,13 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 02:40:29 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/21 02:56:31 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 07:33:43 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ra(t_stack **a)
+void	ra(t_stack **a, int w)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -24,10 +24,11 @@ void	ra(t_stack **a)
 	last->next = *a;
 	(*a)->next = NULL;
 	(*a) = first;
-	write(1, "ra\n", 3);
+	if (w == 1)
+		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack **b)
+void	rb(t_stack **b, int w)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -39,10 +40,11 @@ void	rb(t_stack **b)
 	last->next = *b;
 	(*b)->next = NULL;
 	(*b) = first;
-	write(1, "rb\n", 3);
+	if (w == 1)
+		write(1, "rb\n", 3);
 }
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, int w)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -58,10 +60,11 @@ void	rra(t_stack **a)
 	first->next = *a;
 	*a = first;
 	last->next = NULL;
-	write(1, "rra\n", 4);
+	if (w == 1)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, int w)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -77,5 +80,6 @@ void	rrb(t_stack **b)
 	first->next = *b;
 	*b = first;
 	last->next = NULL;
-	write(1, "rrb\n", 4);
+	if (w == 1)
+		write(1, "rrb\n", 4);
 }

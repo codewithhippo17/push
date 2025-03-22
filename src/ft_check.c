@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 23:56:43 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/21 02:55:54 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 08:10:05 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ bool	is_sorted(t_stack **a, int size)
 			i++;
 	}
 	if (i == size - 1)
-		return (false);
-	return (true);
+		return (true);
+	return (false);
 }

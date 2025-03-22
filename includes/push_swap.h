@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 00:49:39 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/22 00:51:39 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 09:16:37 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
+# include "./gnl/get_next_line.h"
+
 # include <stdlib.h>
 # include <stdbool.h>
-# include <stdio.h>
 # include <limits.h>
 # include <unistd.h>
 
@@ -52,7 +53,7 @@ bool		is_int(char *str);
 ////	linked list handling	\\\\.
 
 t_stack		*ft_last(t_stack *a);
-void		ft_add_back(t_stack **a, int value);
+bool		ft_add_back(t_stack **a, int value);
 void		ft_init(t_stack *new, int value);
 int			ft_stacksize(t_stack *stack_a);
 void		ft_lstaddfront(t_stack **stack, t_stack *new);
@@ -64,13 +65,15 @@ void		ft_free_split(char **str);
 
 ////		operations	     	\\\\.
 
-void		pa(t_stack **a, t_stack **b);
-void		pb(t_stack **a, t_stack **b);
-void		sa(t_stack **a);
-void		sb(t_stack **b);
-void		ra(t_stack **a);
-void		rb(t_stack **b);
-void		rra(t_stack **a);
-void		rrb(t_stack **b);
+void		pa(t_stack **a, t_stack **b, int w);
+void		pb(t_stack **a, t_stack **b, int w);
+void		sa(t_stack **a, int w);
+void		sb(t_stack **b, int w);
+void		ra(t_stack **a, int w);
+void		rb(t_stack **b, int w);
+void		rra(t_stack **a, int w);
+void		rrb(t_stack **b, int w);
+
+char		*get_next_line(int fd);
 
 #endif
