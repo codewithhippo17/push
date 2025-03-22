@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/19 02:46:32 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/21 02:56:04 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 00:53:35 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_init(t_stack *new, int value)
 {
-	new->cost = 0;
 	new->value = value;
 	new->pos = 0;
 	new->next = NULL;

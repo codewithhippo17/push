@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:30:27 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/19 02:44:10 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 00:50:27 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ char	**ft_split(char const *s, char c)
 // 	if (res[i] == NULL)
 // 	{
 // 		printf("dcsdcc");
-		
 // 	}
 // 	// while (res[i])
 // 	// {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/22 00:49:39 by ehamza            #+#    #+#             */
+/*   Updated: 2025/03/22 00:51:39 by ehamza           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -12,22 +24,20 @@
 
 typedef struct stack
 {
-	struct stack *next;
-	int		value;
-	int		pos;
-	int		cost;
-} t_stack;
+	struct stack	*next;
+	int				value;
+	int				pos;
+}	t_stack;
 
 ////	sorting functions		\\\\.
 
 void		ft_sort(t_stack **a, t_stack **b, int size);
 void		push_to_b(t_stack **a, t_stack **b, int size);
-int	    	find_max(t_stack **b, int max_pos);
+int			find_max(t_stack **b, int max_pos);
 void		do_inst(t_stack **a, t_stack **b, int max_idx, int b_size);
 void		push_to_a(t_stack **a, t_stack **b);
 int			find_min(t_stack **b, int min_pos);
-
-void 		print_stack(t_stack **b);
+// void 		print_stack(t_stack **b);
 
 ////	parssing functions		\\\\.
 
