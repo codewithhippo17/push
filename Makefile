@@ -30,8 +30,7 @@ $(NAME): $(OBJS)
 	@echo "[.$^.] Bulding object files..."
 
 libft:
-	@make -C includes/libft > /dev/null 2>&1
-	@make -C includes/libft bonus > /dev/null 2>&1
+	@$(MAKE) -C includes/libft > /dev/null 2>&1
 	@echo "[....Libft....] Successfully compiled."
 
 clean:
