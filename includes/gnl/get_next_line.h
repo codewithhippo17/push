@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 09:59:04 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/22 10:06:27 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 20:23:19 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ char	*ft__strjoin(char *s1, char *s2);
 char	*ft__memchr(char *str);
 char	*ft__strdup(char *s);
 size_t	ft__strlen(const char *str);
+
 #endif

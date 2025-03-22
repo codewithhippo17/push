@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 19:46:00 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/22 06:29:03 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 21:03:03 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ bool	ft_parsing(t_stack **a, int ac, char **input)
 	char	**tmp;
 	int		i;
 
-	i = 1;
-	while (i < ac)
+	i = 0;
+	while (++i < ac)
 	{
 		if (space_exist(input[i]) == true)
 		{
@@ -114,7 +114,6 @@ bool	ft_parsing(t_stack **a, int ac, char **input)
 		}
 		else
 			return (false);
-		i++;
 	}
 	return (true);
 }

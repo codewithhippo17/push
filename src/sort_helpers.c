@@ -6,7 +6,7 @@
 /*   By: ehamza <ehamza@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 02:47:24 by ehamza            #+#    #+#             */
-/*   Updated: 2025/03/22 07:31:16 by ehamza           ###   ########.fr       */
+/*   Updated: 2025/03/22 21:06:39 by ehamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,15 @@ void	push_to_b(t_stack **a, t_stack **b, int size)
 	}
 }
 
-// void print_stack(t_stack **b)
-// {
-// 	printf("#####  stack a  #####\n\n");
-// 	t_stack *current = *b;
-// 	while (current)
-// 	{
-// 		printf("current->value : %d, pos %d\n\n", current->value, current->pos);
-// 		current = current->next;
-// 	}
-// }
+/*
+void print_stack(t_stack **b)
+{
+	printf("#####  stack a  #####\n\n");
+	t_stack *current = *b;
+	while (current)
+	{
+		printf("current->value : %d, pos %d\n\n", current->value, current->pos);
+		current = current->next;
+	}
+}
+*/
