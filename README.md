@@ -6,9 +6,9 @@ A simple **stack-sorting algorithm** that moves numbers between stacks using a c
 
 ## Overview
 
-This repository implements an algorithm to **sort a list of integers** by moving nodes between two stacks based on a **single deciding value** the *magic number*.  
+This repository implements an algorithm to **sort a list of integers** by moving nodes between two stacks based on a **single deciding value** — the *magic number*.  
 
-### How it works:
+### How it works
 
 - Start with a **source stack** `A` containing integers.  
 - The **target stack** `B` receives the integers in an efficient order.  
@@ -20,7 +20,11 @@ The following diagram illustrates the process:
 
 <img width="505" height="320" alt="stack sorting illustration" src="https://github.com/user-attachments/assets/9ed8db1d-b9ed-4e6d-8754-9fed63c76189" />
 
-**Default decision rule:**
+After pushing numbers from `A` to `B` based on the magic number, the algorithm proceeds to **reconstruct the sorted stack in `A`**. Large numbers, which were temporarily deferred and stored at the top or bottom of `B`, are selectively moved back to `A` in the correct order. By repeatedly identifying and transferring these big numbers, the stack gradually becomes fully sorted. This ensures that smaller numbers, already near the middle of `B`, remain in position, while larger numbers are efficiently returned to their proper place in `A`, completing the sorting process.
+
+---
+
+### Default decision rule
 
 - Push value `x` from `A` to `B` if `x <= MAGIC_NUMBER`  
 - Otherwise, push `x` to an auxiliary stack `C`
@@ -37,5 +41,4 @@ The following diagram illustrates the process:
 
 ---
 
-This makes the algorithm **flexible, simple to understand, and easy to adapt** for different sorting strategies.
-
+This makes the algorithm **flexible, easy to understand, and simple to adapt** for different sorting strategies.
